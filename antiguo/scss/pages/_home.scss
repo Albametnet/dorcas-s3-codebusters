@@ -1,0 +1,79 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-color: $color-background;
+}
+.home {
+  max-width: 270px;
+  margin:95px auto 30px;
+  text-align: center;
+}
+@media all and (min-width:768px) {
+  .home {
+    max-width: 420px;
+    margin:100px auto 60px;
+  }
+}
+.home__logo {
+  background-image: url("../images/descarga.svg");
+  background-size: cover;
+  height: 70px;
+}
+@media all and (min-width:768px) {
+  .home__logo {
+    height: 107px;
+  }
+}
+.home__title {
+  font-family: $font-title-index;
+  font-size: 19px;
+  color: $color-icon-title-button;
+  padding: 35px 0 5px;
+  font-weight: 900;
+}
+@media all and (min-width:768px) {
+  .home__title {
+    font-size: 24px;
+    padding: 31px 0 5px;
+  }
+}
+.home__subtitle {
+  font-size: 13px;
+  color: $indexfont-color;
+  padding-bottom: 14px;
+}
+@media all and (min-width:768px) {
+  .home__subtitle {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+}
+.home__links {
+  border-radius: 4px;
+  border: solid 1.6px $color-icon-title-button;
+  list-style: none;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+@media all and (min-width:768px) {
+  .home__links {
+    border-radius: 5px;
+    border-width: 2px;
+  }
+}
+.home__links--icon {
+  color: $color-icon-title-button;
+  width: 32px;
+}
+.home__links--name {
+  display: block;
+  font-size: 16px;
+  color: $color-titles;
+}

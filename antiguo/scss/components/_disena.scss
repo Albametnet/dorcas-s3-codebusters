@@ -1,0 +1,81 @@
+.title__disena {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color-titles;
+    display: grid;
+    grid-template-columns: 16px 1fr 50px;
+    grid-template-rows: 1fr;
+    align-items: center;
+    margin-top: 27px;
+  }
+.form__colors {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.colors__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 120px;
+  margin:0 0 0 auto;
+  }
+.div_colors {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.point {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.point1 {
+  margin-right: 8px;
+}
+.darkBlue {
+  background-color: $darkBlue;
+}
+.mediumBlue {
+  background-color: $mediumBlue;
+}
+.lightBlue {
+  background-color: $lightBlue;
+}
+.darkRed {
+  background-color: $darkRed;
+}
+.mediumRed {
+  background-color: $mediumRed;
+}
+.lightRed {
+  background-color: $lightRed;
+}
+.darkGrey {
+  background-color: $darkGrey;
+}
+.mediumGrey {
+  background-color: $mediumGrey;
+}
+.lightGrey {
+  background-color: $lightGrey;
+}
+.fonts__container {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.form__fonts{
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 0 0 auto;
+}
+.comic1 {
+  font-family: $comic-sans;
+}
+.montserrat1 {
+  font-family: $font-title-index;
+}

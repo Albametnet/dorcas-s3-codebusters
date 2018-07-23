@@ -1,0 +1,193 @@
+.container__visor {
+  display: flex;
+  flex-direction: column;
+  background-image: $color-card-background;
+  width: 100%;
+}
+.visor__name-subname {
+  background-color: $color-background;
+}
+.visor__container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  width: 240px;
+  margin: auto;
+}
+  .visor__view {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 240px;
+    border: 1px solid black;
+    background-color: $color-background;
+    position:relative;
+  }
+  .visor__view-name {
+    font-size: 18px;
+    line-height: 20px;
+    margin-left: 20px;
+    padding: 20px 20px 14px 0;
+    color: $indexfont-color;
+    text-transform: capitalize;
+    font-family: $font-primary;
+  }
+  .visor__image-foto {
+    width: 240px;
+    height: 200px;
+  }
+  .visor__view-profession {
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 20px;
+    color: $color-titles;
+    font-family: $font-primary;
+    padding-bottom: 10px;
+  }
+  .visor__view-a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    margin-left: 10px;
+  }
+  .visor__box {
+    width: 5px;
+    height: 42px;
+    background-color: $colorline;
+    position: absolute;
+    top: 23px;
+    left: 0px;
+  }
+  .visor__view-a-list {
+    display: flex;
+    color: $indexfont-color;
+    list-style: none;
+    width: 100%;
+    text-decoration: none;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .rrss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $colorline;
+    border-radius: 50%;
+    text-decoration: none;
+    list-style: none;
+    margin-right: 10px;
+    color: $indexfont-color;
+  }
+  .visor__view-list-txt {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    border-top: 2px solid $color-general-buttons;
+  }
+  .visor__skills {
+    display: flex;
+    align-items: center;
+  }
+  .visor__list-text-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    height: 18px;
+    padding: 0 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: $font-primary;
+    font-size: 13px;
+    background-color: $color-general-buttons;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: $color-background;
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+.blue {
+  .visor__box {
+    background-color: $lightBlue;
+  }
+  .visor__view-name {
+    color: $darkBlue;
+  }
+  .rrss {
+    border-color: $lightBlue;
+    color: $darkBlue;
+  }
+  .visor__view-list-txt {
+    border-top: 2px solid $mediumBlue;
+  }
+  .visor__list-text-icon {
+    background-color: $mediumBlue;
+  }
+
+}
+.red {
+  .visor__box {
+    background-color: $lightRed;
+  }
+  .visor__view-name {
+    color: $darkRed;
+  }
+  .rrss {
+    border-color: $lightRed;
+    color: $darkRed;
+  }
+  .visor__view-list-txt {
+    border-top: 2px solid $mediumRed;
+  }
+  .visor__list-text-icon {
+    background-color: $mediumRed;
+  }
+}
+.grey {
+  .visor__box {
+    background-color: $lightGrey;
+  }
+  .visor__view-name {
+    color: $darkGrey;
+  }
+  .rrss {
+    border-color: $lightGrey;
+    color: $darkGrey;
+  }
+  .visor__view-list-txt {
+    border-top: 2px solid $mediumGrey;
+  }
+  .visor__list-text-icon {
+    background-color: $mediumGrey;
+  }
+}
+.comic {
+  .visor__view-name {
+    font-family: $comic-sans;
+  }
+  .visor__view-profession {
+    font-family: $comic-sans;
+  }
+  .visor__list-text-icon {
+    font-family: $comic-sans;
+  }
+}
+.montserrat {
+  .visor__view-name {
+    font-family: $font-title-index;
+  }
+  .visor__view-profession {
+    font-family: $font-title-index;
+  }
+  .visor__list-text-icon {
+    font-family: $font-title-index;
+  }
+}

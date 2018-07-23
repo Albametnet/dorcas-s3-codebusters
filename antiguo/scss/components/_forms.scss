@@ -1,0 +1,102 @@
+body {
+  background-color: white;
+}
+
+.container__form--disena {
+  border-bottom: solid 1px $color-line-bottom;
+}
+
+.container__form--rellena {
+  border-bottom: solid 1px $color-line-bottom;
+}
+
+.form__rellena {
+  padding-bottom: 21px;
+  fieldset {
+    border: 0px;
+    margin-top: 40px;
+  }
+  label {
+    color: $indexfont-color; /* esta variable no deberia llamarse asi porque no es solo para el index*/
+    font-size: 14px;
+  }
+  input {
+    width: 100%;
+    margin: 0px auto;
+    border: solid 1px $colorline;
+    height: 30px;
+  }
+}
+
+.titulo__rellena {
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $color-titles;
+  display: grid;
+  grid-template-columns: 16px 1fr 50px;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.form__rellena--plus {
+  margin-top: 60px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  border: solid 2px;
+  display: inline;
+  padding: 0 4px;
+}
+
+.form__rellena--reload {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  border: solid 1px $colorline;
+
+}
+.form__box--image {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__rellena--step {
+  height: 55px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form__rellena--file {
+  input {
+    border: 0px;
+    width: 85%;
+  }
+}
+
+// formulario Aylen
+.colors__palets {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.form__rellena--skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  label {
+    grid-column-end: 3;
+    grid-column-start: 1;
+
+  }
+}
+.select_skills {
+  border: solid 1px $colorline;
+  margin-top: 6px;
+  width: 165px;
+  height: 30px;
+  display: block;
+}

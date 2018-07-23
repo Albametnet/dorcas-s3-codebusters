@@ -1,0 +1,42 @@
+$color-background: #f5f5f5;
+$color-icon-title-button: #e17334;
+$color-titles: #54585a;
+$color-general-buttons: #438792;
+$color-card-background: linear-gradient(#bfcdd0, #dde9ed);
+$indexfont-color: #114e4e;
+$colorline: #a2deaf;
+$form-example-color: #c5c5c5;
+$credits-text: #6b6b6b;
+$color-line-bottom: #d8d8d8;
+$font-title-index: 'Merriweather', serif;
+$font-primary: 'Open Sans', sans-serif;
+$title-font: 'Open Sans', sans-serif;
+$comic-sans: 'Comic Sans MS', 'Comic Sans', 'TSCu_Comic', sans-serif;
+
+.color--orange {
+  color: $color-icon-title-button;
+}
+
+.color--grey {
+  color: $color-titles;
+  text-align: right;
+}
+
+.generaltitle {
+  font-size: 18px;
+  color: $color-titles;
+  text-transform: uppercase;
+  margin-left: 12px;
+}
+
+$darkBlue: #114e4e;
+$mediumBlue: #438792;
+$lightBlue: #a2deaf;
+
+$darkRed: #420101;
+$mediumRed: #bd1010;
+$lightRed: #e95626;
+
+$darkGrey: #3e5b65;
+$mediumGrey: #dfe5eb;
+$lightGrey: #a0c0cf;

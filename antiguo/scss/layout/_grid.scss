@@ -1,0 +1,52 @@
+.form__disena--fontsColors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 30px;
+  padding-top: 25px;
+  margin-bottom: 30px;
+}
+
+.title__colors {
+grid-column: 1;
+grid-row: 1;
+font-size: 14px;
+color: $color-titles;
+text-transform: uppercase;
+}
+
+.form__colors {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+@media all and (min-width:768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+  }
+  .container__visor {
+    grid-column-start: 2;
+    grid-row: 1;
+    background-color: pink;
+  }
+  .container__form {
+    grid-column-start: 1;
+    grid-row: 1;
+  }
+}
+
+.title__fonts {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 14px;
+  color: $color-titles;
+  text-transform: uppercase;
+}
+.form__fonts {
+  grid-column: 2;
+  grid-row: 2;
+}

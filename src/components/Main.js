@@ -2,7 +2,6 @@ import React from 'react';
 import Form from './Form';
 import Visor from './Visor';
 
-
 class Main extends React.Component {
   render() {
     return (
@@ -10,7 +9,6 @@ class Main extends React.Component {
         <Form />
         <Visor />
       </main>
-
     );
   }
 }

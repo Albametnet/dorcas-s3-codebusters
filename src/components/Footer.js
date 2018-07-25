@@ -8,9 +8,9 @@ class Footer extends React.Component {
       <footer>
         <div class="container__footer">
           <p>Awesome profile-cards @2018</p>
-          <p>The Summer Ladies<img src={logoPina} /></p>
+          <p>The Summer Ladies<img src={logoPina} alt="logo piña con gafas" /></p>
           <a href="http://www.adalab.es/ ">
-            <img class="footer__logo " src={logoAdalab} />
+            <img class="footer__logo " src={logoAdalab} alt="logo adalab" />
           </a>
         </div>
       </footer>

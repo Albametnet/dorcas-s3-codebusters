@@ -17,7 +17,7 @@ class Visor extends React.Component {
               <h5 className="visor__view-profession" id="job">Empleo</h5>
             </div>
             <div className="visor__image">
-              <img className="visor__image-foto" src={flamingo} alt="image-tarjet" />
+              <img className="visor__image-foto" src={flamingo} alt="foto tarjeta" />
             </div>
             <div className="list">
               <div className="visor__view-a">

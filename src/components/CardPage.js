@@ -3,10 +3,10 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-class Card extends React.Component {
+class CardPage extends React.Component {
   render() {
     return (
-    <div className="Card">
+    <div className="CardPage">
       <Header />
       <Main />
       <Footer />
@@ -15,4 +15,4 @@ class Card extends React.Component {
   }
 }
 
-export default Card;
+export default CardPage;

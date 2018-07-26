@@ -9,7 +9,7 @@ class CardPage extends React.Component {
     <div className="CardPage">
       <Header />
       <Main />
-      <Footer />
+      <Footer footertext2= {this.props.footerText}/>
     </div>
     );
   }

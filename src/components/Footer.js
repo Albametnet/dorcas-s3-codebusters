@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <footer>
         <div class="container__footer">
-          <p>Awesome profile-cards @2018</p>
+          <p>{this.props.footertext2}</p>
           <p>The Summer Ladies<img src={logoPina} /></p>
           <a href="http://www.adalab.es/ ">
             <img class="footer__logo " src={logoAdalab} />

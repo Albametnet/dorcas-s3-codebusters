@@ -31,6 +31,7 @@ text-transform: uppercase;
   .container__visor {
     grid-column-start: 2;
     grid-row: 1;
+    min-height: 100%;
     background-color: pink;
   }
   .container__form {

@@ -26,7 +26,7 @@ class Fill extends React.Component {
               <div className="form__box--image">
                 <input className="action__hiddenbutton input__photo" type="file" id="imagen" required />
                 <button type="button" name="button" className="form__rellena--button">Añadir imagen</button>
-                <a href="#" id="reloadimage">
+                <a href="" id="reloadimage">
                   <div className="form__rellena--reload"></div>
                 </a>
               </div>

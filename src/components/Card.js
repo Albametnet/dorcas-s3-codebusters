@@ -6,7 +6,7 @@ import Footer from './Footer';
 class Card extends React.Component {
   render() {
     return (
-    <div className="Card">
+    <div className="cardPage">
       <Header />
       <Main />
       <Footer />

@@ -51,7 +51,7 @@ header {
   .container__visor {
     grid-column-start: 2;
     grid-row: 1;
-    height: 80vh;
+    min-height: 100%;
     background-color: pink; }
   .container__form {
     grid-column-start: 1;
@@ -171,6 +171,11 @@ body {
   transform: rotate(-180deg);
   margin-right: 0;
   margin-left: auto; }
+
+.cardPage {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh; }
 
 .container {
   padding: 23px 40px; }

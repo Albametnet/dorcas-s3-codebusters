@@ -6,7 +6,7 @@ import Footer from './Footer';
 class CardPage extends React.Component {
   render() {
     return (
-    <div className="CardPage">
+    <div className="cardPage">
       <Header />
       <Main />
       <Footer footertext2= {this.props.footerText}/>

@@ -6,7 +6,7 @@ class Main extends React.Component {
   render() {
     return (
       <main class="container">
-        <Form />
+        <Form shareTitle4= {this.props.shareTitle3}/>
         <Visor />
       </main>
     );

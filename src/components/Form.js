@@ -9,7 +9,7 @@ class Form extends React.Component {
       <form action="" method="POST">
         <Design />
         <Fill />
-        <Share />
+        <Share shareTitle5= {this.props.shareTitle4}/>
       </form>
     );
   }

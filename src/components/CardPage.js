@@ -8,7 +8,7 @@ class CardPage extends React.Component {
     return (
     <div className="cardPage">
       <Header />
-      <Main />
+      <Main shareTitle3= {this.props.shareTitle2}/>
       <Footer footertext2= {this.props.footerText}/>
     </div>
     );

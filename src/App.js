@@ -6,11 +6,13 @@ class App extends Component {
   constructor (props){
     super(props);
     this.copyRight = 'Awesome profile-cards @2018';
+    this.titulo = 'Rellena';
   }
   render() {
     return (
       <div className="App">
-        <CardPage footerText= {this.copyRight}/>
+        <CardPage footerText= {this.copyRight} tituloApp = {this.titulo}/>
+      
       </div>
     );
   }

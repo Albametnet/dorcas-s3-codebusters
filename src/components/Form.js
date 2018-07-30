@@ -7,7 +7,7 @@ class Form extends React.Component {
   render() {
     return (
       <form action="" method="POST">
-        <Design />
+        <Design titleDesign={this.props.titleMain} titleDesignForm={this.props.titleDesignMain}/>
         <Fill tituloForm= {this.props.tituloMain}/>
         <Share />
       </form>

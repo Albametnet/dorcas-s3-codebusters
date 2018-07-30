@@ -7,12 +7,13 @@ class Design extends React.Component {
         <div className="container__form--disena">
           <div className="title__disena wraptitle">
             <i className="far fa-object-ungroup color--orange"></i>
-            <h2 className="generaltitle">diseña</h2>
+            <h2 className="generaltitle">{this.props.titleDesign}</h2>
             <i className="fas fa-angle-down color--grey move1"></i>
           </div>
           <div className="form__disena--fontsColors wrapform">
-            <h3 className="title__colors">colores</h3>
+            <h3 className="title__colors">{this.props.titleDesignForm.colors}</h3>
             <div className="form__colors">
+            
               <div className="colors__container">
                 <input id="option1" type="radio" value="1" data-color="" name="color" className="point input__palette_1" checked />
                 <label for="option1">
@@ -44,7 +45,7 @@ class Design extends React.Component {
                 </label>
               </div>
             </div>
-            <h3 className="title__fonts">fuentes</h3>
+            <h3 className="title__fonts">{this.props.titleDesignForm.fonts}</h3>
             <div className="form__fonts">
               <div className="fonts__container">
                 <input id="font1" type="radio" value="1" name="font" className="point1 input__typography_1" data-font="" checked />

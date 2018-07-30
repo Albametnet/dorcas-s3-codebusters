@@ -6,11 +6,7 @@ class Fill extends React.Component {
       <div className="container__form--rellena" id="rellena">
         <div className="titulo__rellena">
           <i className="fas fa-keyboard color--orange"></i>
-<<<<<<< HEAD
           <h2 className="generaltitle">{this.props.shareTitle5.rellena}</h2>
-=======
-          <h2 className="generaltitle">{this.props.tituloForm}</h2>
->>>>>>> react
           <i className="fas fa-angle-down color--grey move2"></i>
         </div>
         <div className="form__rellena form__oculto">

@@ -7,7 +7,7 @@ class Design extends React.Component {
         <div className="container__form--disena">
           <div className="title__disena wraptitle">
             <i className="far fa-object-ungroup color--orange"></i>
-            <h2 className="generaltitle">diseña</h2>
+            <h2 className="generaltitle">{this.props.shareTitle5.diseña}</h2>
             <i className="fas fa-angle-down color--grey move1"></i>
           </div>
           <div className="form__disena--fontsColors wrapform">

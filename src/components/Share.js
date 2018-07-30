@@ -6,7 +6,7 @@ class Share extends React.Component {
       <div className="container__comparte" id="comparte">
         <div className="container__comparte--icon wraptitle">
           <i className="fas fa-share-alt"></i>
-          <h2 className="generaltitle">{this.props.shareTitle5}</h2>
+          <h2 className="generaltitle">{this.props.shareTitle5.comparte}</h2>
           <i className="fas fa-angle-down color--grey move3"></i>
         </div>
         <div className="form__comparte wrapform form__oculto">

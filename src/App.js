@@ -6,7 +6,7 @@ class App extends Component {
   constructor (props){
     super(props);
     this.copyRight = 'Awesome profile-cards @2018';
-    this.shareTitle = 'Comparte';
+    this.shareTitle = {comparte:'comparte', rellena:'rellena', diseña:'diseña'}
   }
   render() {
     return (

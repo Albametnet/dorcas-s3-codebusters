@@ -13,6 +13,7 @@ class Design extends React.Component {
           <div className="form__disena--fontsColors wrapform">
             <h3 className="title__colors">{this.props.titleDesignForm.colors}</h3>
             <div className="form__colors">
+            
               <div className="colors__container">
                 <input id="option1" type="radio" value="1" data-color="" name="color" className="point input__palette_1" checked />
                 <label for="option1">

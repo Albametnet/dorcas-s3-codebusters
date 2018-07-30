@@ -23,22 +23,22 @@ class Card extends React.Component {
               <ul className="visor__view-a-list">
                 <li>
                   <a className="link" href="" target="_blank" title="mobile" id="rellena__phone">
-                    <i className="rrss fas fa-mobile-alt"></i>
+                    <i className={this.props.iconVisor.movil}></i>
                   </a>
                 </li>
                 <li>
                   <a href="" className="link" target="_blank" title="Gmail general" id="rellena__email">
-                    <i className="rrss far fa-envelope"></i>
+                    <i className={this.props.iconVisor.email}></i>
                   </a>
                 </li>
                 <li>
                   <a className="link" href="" target="_blank" title="linkedin general" id="rellena__linkedin">
-                    <i className="rrss fab fa-linkedin-in"></i>
+                    <i className={this.props.iconVisor.linkedin}></i>
                   </a>
                 </li>
                 <li>
                   <a className="link" href="" target="_blank" title="general" id="rellena__github">
-                    <i className="rrss fab fa-github-alt"></i>
+                    <i className={this.props.iconVisor.github}></i>
                   </a>
                 </li>
               </ul>

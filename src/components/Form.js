@@ -8,7 +8,7 @@ class Form extends React.Component {
     return (
       <form action="" method="POST">
         <Design titleDesign={this.props.titleMain} titleDesignForm={this.props.titleDesignMain}/>
-        <Fill />
+        <Fill tituloForm= {this.props.tituloMain}/>
         <Share />
       </form>
     );

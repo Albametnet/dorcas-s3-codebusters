@@ -8,9 +8,7 @@ class App extends Component {
     this.state = {
       copyRight: 'Awesome profile-cards @2018',
       skills: []
-
     };
-    this.getskills = this.getskills.bind(this)
     this.getskills();
     this.shareTitle = { comparte: 'comparte', rellena: 'rellena', diseña: 'diseña' }
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
@@ -28,8 +26,7 @@ class App extends Component {
         this.setState({
           skills: habilidades
         })
-      }
-      )
+      })
   }
   render() {
     return (

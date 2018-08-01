@@ -1,6 +1,6 @@
 
 //Habilidades
-function createSelect(entryskills) {
+const createSelect = (entryskills) => {
   var inputSelect = document.createElement('select');
   inputSelect.name = 'skills';
   inputSelect.id = 'skills' + counterSkills;
@@ -15,7 +15,7 @@ function createSelect(entryskills) {
   inputSelect.addEventListener('change', skillAgregator);
   formRellenaSkills.appendChild(inputSelect);
 }
-function skillAgregator(e){
+const skillAgregator = (e) =>{
   var activeSelect = e.currentTarget;
   var activeSkills = document.querySelector('#selected' +  activeSelect.id);
   activeSkills.innerHTML= activeSelect.value;
@@ -23,7 +23,7 @@ function skillAgregator(e){
   skillsToSave[activeSelect.getAttribute('data-index')] = activeSelect.value;
   saveForm('skills', skillsToSave);
 }
-function serverConector() {
+const serverConector = () => {
   fetch(
     'https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json'
   )
@@ -36,7 +36,7 @@ function serverConector() {
       includeLocalStorage();
     });
 }
-function addSkills() {
+const addSkills = () => {
   if (counterSkills < 3) {
     createSelect(skills);
     createPlusButton();
@@ -44,7 +44,7 @@ function addSkills() {
   }
 }
 serverConector();
-function createPlusButton() {
+const createPlusButton = () => {
   var plusButton = document.createElement('a');
   var divButton = document.createElement('div');
   var iButton = document.createElement('i');

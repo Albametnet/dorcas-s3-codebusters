@@ -59,7 +59,7 @@ class Fill extends React.Component {
           <fieldset>
             <div className="form__rellena--skills ">
               <label htmlFor="skills ">Habilidades (máximo 3)</label>
-              <select id="gender" onChange={this.changeGender}>
+              <select id="skills">
                 {this.props.skills.map(function (item){
                   return(
                     <option value={item}>{item}</option>

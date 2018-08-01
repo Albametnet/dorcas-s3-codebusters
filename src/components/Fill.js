@@ -1,6 +1,10 @@
 import React from 'react';
 
 class Fill extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="container__form--rellena" id="rellena">
@@ -54,7 +58,14 @@ class Fill extends React.Component {
           </fieldset>
           <fieldset>
             <div className="form__rellena--skills ">
-              <label for="skills ">Habilidades (máximo 3)</label>
+              <label htmlFor="skills ">Habilidades (máximo 3)</label>
+              <select id="gender" onChange={this.changeGender}>
+                {this.props.skills.map(function (item){
+                  return(
+                    <option value={item}>{item}</option>
+                  )
+                })}
+              </select>
             </div>
           </fieldset>
         </div>

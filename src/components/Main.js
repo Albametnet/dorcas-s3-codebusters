@@ -6,7 +6,7 @@ class Main extends React.Component {
   render() {
     return (
       <main class="container">
-        <Form shareTitle4= {this.props.shareTitle3} titleDesignMain={this.props.titleDesignCardPage} tituloMain = {this.props.tituloCardPage}/>
+        <Form shareTitle4= {this.props.shareTitle3} titleDesignMain={this.props.titleDesignCardPage} tituloMain = {this.props.tituloCardPage} skills ={this.props.skills}/>
         <Visor iconMain= {this.props.iconCardPage} />
       </main>
     );

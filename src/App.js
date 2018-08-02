@@ -25,6 +25,7 @@ class App extends Component {
     this.shareTitle = { comparte: 'comparte', rellena: 'rellena', diseña: 'diseña' }
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
     this.icono = { movil: 'rrss fas fa-mobile-alt', email: 'rrss far fa-envelope', linkedin: 'rrss fab fa-linkedin-in', github: 'rrss fab fa-github-alt' }
+    this.changeForm = this.changeForm.bind(this);
   }
   getskills() {
     fetch(
@@ -40,10 +41,19 @@ class App extends Component {
         })
       })
   }
+
+  changeForm(event) {
+    const guilty = event.currentTarget.value;
+    this.setState({
+        json:{name: guilty}
+      }
+    ) 
+  }
+
   render() {
     return (
       <div className="App">
-        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} />
+        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} name={this.state.json.name} changeForm={this.changeForm}/>
       </div>
     );
   }

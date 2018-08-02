@@ -1,9 +1,7 @@
 import React from 'react';
 
 class Fill extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     return (
@@ -18,7 +16,7 @@ class Fill extends React.Component {
             <div className="form__rellena--step">
               <label for="name">Nombre completo</label>
               <input placeholder="Ej: Sally Hill" className="input__name" type="text" id="name" data-donde="userName" data-property="name"
-                required />
+                required onChange={this.props.changeForm}/>
             </div>
             <div className="form__rellena--step">
               <label for="position">Puesto</label>

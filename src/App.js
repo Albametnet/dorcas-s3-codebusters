@@ -43,17 +43,37 @@ class App extends Component {
   }
 
   changeForm(event) {
-    const guilty = event.currentTarget.value;
-    this.setState({
-        json:{name: guilty}
+    const guilty = event.currentTarget;
+  if (guilty.getAttribute ('id')=== 'name'){
+    this.setState ((prevState) => {
+      const j = {
+        ...this.prevState.json,
+        name: guilty.value
       }
-    ) 
+    return (
+      {json: j}
+    )
+  })
   }
+  else if (guilty.getAttribute ('id')=== 'position'){
+    this.setState ((prevState) => {
+      const j = {
+        ...this.prevState.json,
+        job: guilty.value
+      }
+    return (
+      {json: j}
+    )
+  })
+  } 
+  
+}
+  
 
   render() {
     return (
       <div className="App">
-        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} name={this.state.json.name} changeForm={this.changeForm}/>
+        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm}/>
       </div>
     );
   }

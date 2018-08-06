@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import './stylesheets/App.css';
 import CardPage from './components/CardPage';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import { Switch, Route } from 'react-router-dom';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      copyRight: 'Awesome profile-cards @2018',
       skills: [],
       json: {
-          palette: 1,
-          typography: 2,
-          name : "María García",
-          job: "Front-end developer",
-          phone: "+34 666666666",
-          email: "mariagar@example.com",
-          linkedin: "mariagar",
-          github: "mariagar",
-          photo: "data:image/png;base64,2342ba...",
-          skills: ["HTML", "Sass", "JavaScript"]
+        palette: 1,
+        typography: 2,
+        name: "María García",
+        job: "Front-end developer",
+        phone: "+34 666666666",
+        email: "mariagar@example.com",
+        linkedin: "mariagar",
+        github: "mariagar",
+        photo: "data:image/png;base64,2342ba...",
+        skills: ["HTML", "Sass", "JavaScript"]
       }
     };
     this.getskills();
@@ -34,7 +37,7 @@ class App extends Component {
       .then(function (response) {
         return response.json();
       })
-      .then( (json) => {
+      .then((json) => {
         const habilidades = json.skills;
         this.setState({
           skills: habilidades
@@ -44,36 +47,40 @@ class App extends Component {
 
   changeForm(event) {
     const guilty = event.currentTarget;
-  if (guilty.getAttribute ('id')=== 'name'){
-    this.setState ((prevState) => {
-      const j = {
-        ...this.prevState.json,
-        name: guilty.value
-      }
-    return (
-      {json: j}
-    )
-  })
+    if (guilty.getAttribute('id') === 'name') {
+      this.setState((prevState) => {
+        const j = {
+          ...this.prevState.json,
+          name: guilty.value
+        }
+        return (
+          { json: j }
+        )
+      })
+    }
+    else if (guilty.getAttribute('id') === 'position') {
+      this.setState((prevState) => {
+        const j = {
+          ...this.prevState.json,
+          job: guilty.value
+        }
+        return (
+          { json: j }
+        )
+      })
+    }
+
   }
-  else if (guilty.getAttribute ('id')=== 'position'){
-    this.setState ((prevState) => {
-      const j = {
-        ...this.prevState.json,
-        job: guilty.value
-      }
-    return (
-      {json: j}
-    )
-  })
-  } 
-  
-}
-  
+
 
   render() {
     return (
       <div className="App">
-        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm}/>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />} />
+        </Switch>
+        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />
       </div>
     );
   }

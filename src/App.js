@@ -47,9 +47,9 @@ class App extends Component {
   changeForm(event) {
     const guilty = event.currentTarget;
     if (guilty.getAttribute('id') === 'name') {
-      this.setState((prevState) => {
+      this.setState((state) => {
         const j = {
-          ...this.prevState.json,
+          ...this.state.json,
           name: guilty.value
         }
         return (
@@ -58,9 +58,9 @@ class App extends Component {
       })
     }
     else if (guilty.getAttribute('id') === 'position') {
-      this.setState((prevState) => {
+      this.setState((state) => {
         const j = {
-          ...this.prevState.json,
+          ...this.state.json,
           job: guilty.value
         }
         return (

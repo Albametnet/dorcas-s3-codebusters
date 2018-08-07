@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './stylesheets/App.css';
 import CardPage from './components/CardPage';
 import Home from './components/Home';
-import Footer from './components/Footer';
 import { Switch, Route } from 'react-router-dom';
 
 
@@ -80,7 +79,7 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />} />
         </Switch>
-        <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />
+        {/* <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} /> */}
       </div>
     );
   }

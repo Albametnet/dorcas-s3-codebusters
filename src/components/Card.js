@@ -12,8 +12,8 @@ class Card extends React.Component {
         <div className="visor__view">
           <div className="visor__box"></div>
           <div className="visor__name-subname">
-            <h4 className="visor__view-name" id="userName">Nombre y apellidos</h4>
-            <h5 className="visor__view-profession" id="job">Empleo</h5>
+            <h4 className="visor__view-name" id="userName">{this.props.form.name}</h4>
+            <h5 className="visor__view-profession" id="job">{this.props.form.job}</h5>
           </div>
           <div className="visor__image">
             <img className="visor__image-foto" src={flamingo} alt="target" />

@@ -1,6 +1,8 @@
 import React from 'react';
 
 class Fill extends React.Component {
+  
+
   render() {
     return (
       <div className="container__form--rellena" id="rellena">
@@ -14,12 +16,12 @@ class Fill extends React.Component {
             <div className="form__rellena--step">
               <label for="name">Nombre completo</label>
               <input placeholder="Ej: Sally Hill" className="input__name" type="text" id="name" data-donde="userName" data-property="name"
-                required />
+               onChange={this.props.changeForm} required />
             </div>
             <div className="form__rellena--step">
               <label for="position">Puesto</label>
               <input placeholder="Front end Unicorn" className="input__job" type="text" id="position" data-donde="job" data-property="job"
-                required />
+               onChange={this.props.changeForm} required />
             </div>
             <div className="form__rellena--file">
               <label for="imagen">Imagen de Perfil</label>
@@ -54,7 +56,14 @@ class Fill extends React.Component {
           </fieldset>
           <fieldset>
             <div className="form__rellena--skills ">
-              <label for="skills ">Habilidades (máximo 3)</label>
+              <label htmlFor="skills ">Habilidades (máximo 3)</label>
+              <select id="skills">
+                {this.props.skills.map(function (item){
+                  return(
+                    <option value={item}>{item}</option>
+                  )
+                })}
+              </select>
             </div>
           </fieldset>
         </div>

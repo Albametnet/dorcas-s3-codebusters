@@ -27,7 +27,7 @@ class Card extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="" className="link" target="_blank" title="Gmail general" id="rellena__email">
+                  <a href= {this.props.form.email} className="link" target="_blank" title="Gmail general" id="rellena__email">
                     <i className={this.props.iconVisor.email}></i>
                   </a>
                 </li>

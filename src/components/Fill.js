@@ -36,22 +36,22 @@ class Fill extends React.Component {
             <div className="form__rellena--step">
               <label for="email">Email</label>
               <input className="rellena__email input__email" placeholder="sallyhill@gmail.com" type="email" data-rrss="rellena__email"
-                data-property="email" required />
+                data-property="email" onChange={this.props.changeForm} required />
             </div>
             <div className="form__rellena--step">
               <label for="phone">Telefono</label>
               <input className="rellena__phone input__phone" placeholder="555-55-55-55" type="tel" data-rrss="rellena__phone" data-property="phone"
-                required />
+                 onChange={this.props.changeForm} required />
             </div>
             <div className=" form__rellena--step ">
               <label for="linkedin ">Linkedin</label>
               <input className="rellena__linkedin input__linkedin" placeholder="ej:linkedin.com/in/sally-hill " type="linkedin " data-rrss="rellena__linkedin"
-                data-property="linkedin" required />
+                data-property="linkedin" onChange={this.props.changeForm} required />
             </div>
             <div className="form__rellena--step ">
               <label for="github ">Github</label>
               <input className="rellena__github input__github" placeholder="@sally-hill " type="text " data-rrss="rellena__github" data-property="github"
-                required />
+                 onChange={this.props.changeForm} required />
             </div>
           </fieldset>
           <fieldset>

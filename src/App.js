@@ -80,7 +80,42 @@ class App extends Component {
         
       })
     }
-
+    else if (guilty.getAttribute('type') === 'tel'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          phone: 'tel:' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
+    else if (guilty.getAttribute('type') === 'linkedin'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          linkedin: 'www.linkedin.com/in/' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
+    else if (guilty.getAttribute('type') === 'github'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          github: 'github.com/' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
   }
 
 

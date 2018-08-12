@@ -2,6 +2,10 @@ import React from 'react';
 
 class Fill extends React.Component {
 
+  changefile(e){
+    const inputelement = document.querySelector("#img-selector");
+    inputelement.click();
+}
 
   render() {
     return (
@@ -26,8 +30,8 @@ class Fill extends React.Component {
             <div className="form__rellena--file">
               <label for="imagen">Imagen de Perfil</label>
               <div className="form__box--image">
-                <input className="action__hiddenbutton input__photo" type="file" id="imagen" required />
-                <button type="button" name="button" className="form__rellena--button">Añadir imagen</button>
+                <input className="action__hiddenbutton input__photo" type="file" id="imagen" required onChange={this.props.handleImage} ref={this.props.fileImageRef}/>
+                <button type="button" name="button" className="form__rellena--button" onClick={this.changefile}>Añadir imagen</button >
                 <a href="" id="reloadimage">
                   <div className="form__rellena--reload"></div>
                 </a>

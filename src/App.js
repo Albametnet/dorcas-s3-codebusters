@@ -5,6 +5,7 @@ import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
 
 
+const fr = new FileReader();
 class App extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,8 @@ class App extends Component {
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
     this.icono = { movil: 'rrss fas fa-mobile-alt', email: 'rrss far fa-envelope', linkedin: 'rrss fab fa-linkedin-in', github: 'rrss fab fa-github-alt' }
     this.changeForm = this.changeForm.bind(this);
+    this.writeImages = this.writeImages.bind(this);
+    this.handleImage = this.handleImage.bind(this);
   }
   getskills() {
     fetch(
@@ -117,14 +120,25 @@ class App extends Component {
       })
     }
   }
+  handleImage(event) {
+    const newImage = this.fileInput.current.files[0];
+    fr.addEventListener('load', this.writeImages);
+    fr.readAsDataURL(newImage);
+  }
 
+  writeImages(){
+    this.setState({
+      imageUrl: `url("${fr.result}")`,
+      image: fr.result
+    });
+  }
 
   render() {
     return (
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />} />
+          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} handleImage={this.handleImage} writeImages={this.writeImages}/>} />
         </Switch>
       </div>
     );

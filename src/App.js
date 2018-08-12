@@ -113,7 +113,7 @@ class App extends Component {
       this.setState((state) => {
         const j = {
           ...this.state.json,
-          linkedin: 'www.linkedin.com/in/' + guilty.value
+          linkedin: 'https://www.linkedin.com/in/' + guilty.value
         }
         return (
           { json: j }
@@ -125,7 +125,7 @@ class App extends Component {
       this.setState((state) => {
         const j = {
           ...this.state.json,
-          github: 'github.com/' + guilty.value
+          github: 'https://github.com/' + guilty.value
         }
         return (
           { json: j }

@@ -21,13 +21,15 @@ class App extends Component {
         github: "mariagar",
         photo: "data:image/png;base64,2342ba...",
         skills: ["HTML", "Sass", "JavaScript"]
-      }
+      },
+      urlCard: ""
     };
     this.shareTitle = { comparte: 'comparte', rellena: 'rellena', diseña: 'diseña' }
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
     this.icono = { movil: 'rrss fas fa-mobile-alt', email: 'rrss far fa-envelope', linkedin: 'rrss fab fa-linkedin-in', github: 'rrss fab fa-github-alt' }
     this.changeForm = this.changeForm.bind(this);
     this.reset = this.reset.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
   }
   componentDidMount(){
     this.verifyLocalStorage();
@@ -59,6 +61,26 @@ class App extends Component {
           skills: habilidades
         })
       })
+  }
+
+   sendRequest(){
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(this.state.json),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+      .then(resp => {return resp.json();})
+      .then(result => { this.showURL(result); })
+      .catch(error => { console.log(error); });
+  }
+   showURL(result){
+     console.log(result);
+    this.setState({
+      urlCard: result.cardURL
+    })
+    console.log(this.state.urlCard);
   }
 
   changeForm(event) {
@@ -169,7 +191,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} reset={this.reset} />} />
+          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} reset={this.reset} request={this.sendRequest} urlCard={this.state.urlCard} />} />
         </Switch>
       </div>
     );

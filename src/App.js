@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       skills: [],
+      selectedSkills: ["HTML"],
       json: {
         palette: 1,
         typography: 2,
@@ -28,6 +29,13 @@ class App extends Component {
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
     this.icono = { movil: 'rrss fas fa-mobile-alt', email: 'rrss far fa-envelope', linkedin: 'rrss fab fa-linkedin-in', github: 'rrss fab fa-github-alt' }
     this.changeForm = this.changeForm.bind(this);
+    this.changeSkills = this.changeSkills.bind(this);  
+    this.addNewSelectedSkill = this.addNewSelectedSkill.bind(this);
+    this.removeSelectedSkill = this.removeSelectedSkill.bind(this);
+
+
+
+
   }
   getskills() {
     fetch(
@@ -118,13 +126,56 @@ class App extends Component {
     }
   }
 
+  changeSkills(e) {
+    const newSkill = e.currentTarget.value;
+    const position = e.currentTarget.getAttribute('data-position');
+    const newArray = this.state.selectedSkills;
+    newArray[position] = newSkill;
+    this.setState({
+      selectedSkills: newArray
+    })
+  }
+
+  addNewSelectedSkill() {
+    const newSkills = this.state.selectedSkills;
+    if (newSkills.length < 3) {
+      newSkills.push("HTML");
+      this.setState({
+        selectedSkills: newSkills
+      });
+    } 
+  }
+
+  removeSelectedSkill() {
+    const removeSkill = this.state.selectedSkills;
+    if (removeSkill.length > 1) {
+      removeSkill.splice(-1,1);
+      this.setState({
+        selectedSkills: removeSkill
+      });
+    }
+  }
+
 
   render() {
     return (
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />} />
+          <Route path='/CardPage' render={() => 
+            <CardPage 
+              footerText={this.state.copyRight} shareTitle2={this.shareTitle} 
+              titleDesign={this.titleDesign} 
+              iconApp={this.icono} 
+              skills={this.state.skills} 
+              form={this.state.json} 
+              changeForm={this.changeForm} 
+              selectedSkills={this.state.selectedSkills} 
+              changeSkills={this.changeSkills}
+              addNewSelectedSkill={this.addNewSelectedSkill}
+              removeSelectedSkill={this.removeSelectedSkill}
+            />} 
+          />
         </Switch>
       </div>
     );

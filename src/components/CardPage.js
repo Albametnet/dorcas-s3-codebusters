@@ -8,7 +8,12 @@ class CardPage extends React.Component {
     return (
     <div className="cardPage">
       <Header />
-      <Main shareTitle3= {this.props.shareTitle2} titleDesignCardPage={this.props.titleDesign} iconCardPage={this.props.iconApp} skills ={this.props.skills} form={this.props.form} changeForm={this.props.changeForm}/>
+      <Main shareTitle3= {this.props.shareTitle2} titleDesignCardPage={this.props.titleDesign} iconCardPage={this.props.iconApp} skills ={this.props.skills} form={this.props.form} changeForm={this.props.changeForm} selectedSkills={this.props.selectedSkills} 
+      addNewSelectedSkill={this.props.addNewSelectedSkill}
+      removeSelectedSkill={this.props.removeSelectedSkill}
+
+
+/>
       <Footer />
     </div>
     );

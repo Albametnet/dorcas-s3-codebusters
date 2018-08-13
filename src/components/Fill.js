@@ -23,17 +23,17 @@ constructor(props){
             <div className="form__rellena--step">
               <label for="name">Nombre completo</label>
               <input placeholder="Ej: Sally Hill" className="input__name" type="text" id="name" data-donde="userName" data-property="name"
-                onChange={this.props.changeForm} value={this.props.form.name} required />
+                onChange={this.props.changeForm} value={this.props.form.name}  />
             </div>
             <div className="form__rellena--step">
               <label for="position">Puesto</label>
               <input placeholder="Front end Unicorn" className="input__job" type="text" id="position" data-donde="job" data-property="job"
-                onChange={this.props.changeForm} value={this.props.form.job} required />
+                onChange={this.props.changeForm} value={this.props.form.job}  />
             </div>
             <div className="form__rellena--file">
               <label for="imagen">Imagen de Perfil</label>
               <div className="form__box--image">
-                <input className="action__hiddenbutton input__photo" type="file" id="imagen" required onChange={this.props.handleImage} ref={this.props.fileImageRef} id="img-selector"/>
+                <input className="action__hiddenbutton input__photo" type="file" id="imagen"  onChange={this.props.handleImage} ref={this.props.fileImageRef} id="img-selector"/>
                 <button type="button" name="button" className="form__rellena--button" onClick={this.changefile} >Añadir imagen</button >
                 <a href="" id="reloadimage">
                   <div className="form__rellena--reload" style= {{backgroundImage: this.props.imageUrl}}></div>
@@ -43,22 +43,22 @@ constructor(props){
             <div className="form__rellena--step">
               <label for="email">Email</label>
               <input className="rellena__email input__email" placeholder="sallyhill@gmail.com" type="email" data-rrss="rellena__email"
-                data-property="email" onChange={this.props.changeForm} required />
+                data-property="email" onChange={this.props.changeForm}  />
             </div>
             <div className="form__rellena--step">
               <label for="phone">Telefono</label>
               <input className="rellena__phone input__phone" placeholder="555-55-55-55" type="tel" data-rrss="rellena__phone" data-property="phone"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm}  />
             </div>
             <div className=" form__rellena--step ">
               <label for="linkedin ">Linkedin</label>
               <input className="rellena__linkedin input__linkedin" placeholder="ej:linkedin.com/in/sally-hill " type="linkedin" data-rrss="rellena__linkedin"
-                data-property="linkedin" onChange={this.props.changeForm} required />
+                data-property="linkedin" onChange={this.props.changeForm}  />
             </div>
             <div className="form__rellena--step ">
               <label for="github ">Github</label>
               <input className="rellena__github input__github" placeholder="@sally-hill " type="github" data-rrss="rellena__github" data-property="github"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm}  />
             </div>
           </fieldset>
           <fieldset>

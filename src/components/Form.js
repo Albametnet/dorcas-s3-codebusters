@@ -18,7 +18,6 @@ class Form extends React.Component {
           changeSkills={this.props.changeSkills}               
           addNewSelectedSkill={this.props.addNewSelectedSkill}
           removeSelectedSkill={this.props.removeSelectedSkill}
-          shareTitle5={this.props.shareTitle4} 
           form={this.props.form}
           handleImage={this.props.handleImage} 
           writeImages={this.props.writeImages} 

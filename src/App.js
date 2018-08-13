@@ -81,7 +81,7 @@ class App extends Component {
       },
     })
       .then(resp => {return resp.json();})
-      .then(result => { this.showURL(result); })
+      .then(result => { this.showURL(result);})
       .catch(error => { console.log(error); });
   }
    showURL(result){

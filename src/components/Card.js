@@ -5,7 +5,7 @@ class Card extends React.Component {
   render() {
     return (
       <div className="visor__container1">
-        <button type="button" className="visor__button-reset" name="button-reset">
+        <button type="button" className="visor__button-reset" name="button-reset" onClick={this.props.reset}>
           <span>
             <i className="far fa-trash-alt"></i> reset</span>
         </button>

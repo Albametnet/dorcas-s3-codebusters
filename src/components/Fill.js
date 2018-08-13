@@ -16,12 +16,12 @@ class Fill extends React.Component {
             <div className="form__rellena--step">
               <label for="name">Nombre completo</label>
               <input placeholder="Ej: Sally Hill" className="input__name" type="text" id="name" data-donde="userName" data-property="name"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm} value={this.props.form.name} required />
             </div>
             <div className="form__rellena--step">
               <label for="position">Puesto</label>
               <input placeholder="Front end Unicorn" className="input__job" type="text" id="position" data-donde="job" data-property="job"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm} value={this.props.form.job} required />
             </div>
             <div className="form__rellena--file">
               <label for="imagen">Imagen de Perfil</label>

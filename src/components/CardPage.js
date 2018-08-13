@@ -11,9 +11,10 @@ class CardPage extends React.Component {
       <Main shareTitle3= {this.props.shareTitle2} titleDesignCardPage={this.props.titleDesign} iconCardPage={this.props.iconApp} skills ={this.props.skills} form={this.props.form} changeForm={this.props.changeForm} selectedSkills={this.props.selectedSkills} 
       addNewSelectedSkill={this.props.addNewSelectedSkill}
       removeSelectedSkill={this.props.removeSelectedSkill}
-
-
-/>
+      reset={this.props.reset}
+      request={this.props.request}
+      urlCard={this.props.urlCard}
+      />
       <Footer />
     </div>
     );

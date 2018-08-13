@@ -640,9 +640,6 @@ body {
 .montserrat .visor__list-text-icon {
   font-family: "Merriweather", serif; }
 
-.form__oculto {
-  display: none; }
-
 .button {
   background-color: red;
   margin: auto;

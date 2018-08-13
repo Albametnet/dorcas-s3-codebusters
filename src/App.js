@@ -68,7 +68,54 @@ class App extends Component {
         )
       })
     }
-
+    else if (guilty.getAttribute('type') === 'email'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          email: 'mailto:' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
+    else if (guilty.getAttribute('type') === 'tel'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          phone: 'tel:' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
+    else if (guilty.getAttribute('type') === 'linkedin'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          linkedin: 'www.linkedin.com/in/' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
+    else if (guilty.getAttribute('type') === 'github'){
+      this.setState((state) => {
+        const j = {
+          ...this.state.json,
+          github: 'github.com/' + guilty.value
+        }
+        return (
+          { json: j }
+        )
+        
+      })
+    }
   }
 
 
@@ -79,7 +126,6 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} />} />
         </Switch>
-        {/* <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} /> */}
       </div>
     );
   }

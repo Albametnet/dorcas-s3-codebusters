@@ -22,22 +22,22 @@ class Card extends React.Component {
             <div className="visor__view-a">
               <ul className="visor__view-a-list">
                 <li>
-                  <a className="link" href="" target="_blank" title="mobile" id="rellena__phone">
+                  <a className="link" href={this.props.form.phone} target="_blank" title="mobile" id="rellena__phone">
                     <i className={this.props.iconVisor.movil}></i>
                   </a>
                 </li>
                 <li>
-                  <a href="" className="link" target="_blank" title="Gmail general" id="rellena__email">
+                  <a href= {this.props.form.email} className="link" target="_blank" title="Gmail general" id="rellena__email">
                     <i className={this.props.iconVisor.email}></i>
                   </a>
                 </li>
                 <li>
-                  <a className="link" href="" target="_blank" title="linkedin general" id="rellena__linkedin">
+                  <a className="link" href={this.props.form.linkedin} target="_blank" title="linkedin general" id="rellena__linkedin">
                     <i className={this.props.iconVisor.linkedin}></i>
                   </a>
                 </li>
                 <li>
-                  <a className="link" href="" target="_blank" title="general" id="rellena__github">
+                  <a className="link" href={this.props.form.github} target="_blank" title="general" id="rellena__github">
                     <i className={this.props.iconVisor.github}></i>
                   </a>
                 </li>

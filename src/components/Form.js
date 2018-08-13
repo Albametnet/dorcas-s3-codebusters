@@ -20,12 +20,16 @@ class Form extends React.Component {
           removeSelectedSkill={this.props.removeSelectedSkill}
           shareTitle5={this.props.shareTitle4} 
           form={this.props.form}
+          handleImage={this.props.handleImage} 
+          writeImages={this.props.writeImages} 
+          imageUrl={this.props.imageUrl}
         />
         <Share
           shareTitle5={this.props.shareTitle4}
           request={this.props.request} 
           urlCard={this.props.urlCard}
         />
+
       </form>
     );
   }

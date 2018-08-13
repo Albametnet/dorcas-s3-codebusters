@@ -8,6 +8,7 @@ class CardPage extends React.Component {
     return (
     <div className="cardPage">
       <Header />
+
       <Main
         shareTitle3= {this.props.shareTitle2}
         titleDesignCardPage={this.props.titleDesign}
@@ -21,7 +22,11 @@ class CardPage extends React.Component {
         reset={this.props.reset}
         request={this.props.request}
         urlCard={this.props.urlCard}
+        handleImage={this.props.handleImage} 
+        writeImages={this.props.writeImages} 
+        imageUrl={this.props.imageUrl}
       />
+
       <Footer />
     </div>
     );

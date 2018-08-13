@@ -6,6 +6,7 @@ class Main extends React.Component {
   render() {
     return (
       <main class="container">
+
         <Form 
           shareTitle4={this.props.shareTitle3} 
           titleDesignMain={this.props.titleDesignCardPage} 
@@ -18,6 +19,9 @@ class Main extends React.Component {
           request={this.props.request}
           urlCard={this.props.urlCard}
           form={this.props.form}
+          handleImage={this.props.handleImage} 
+          writeImages={this.props.writeImages} 
+          imageUrl={this.props.imageUrl}
         />
         <Visor
           iconMain={this.props.iconCardPage}
@@ -25,7 +29,6 @@ class Main extends React.Component {
           reset={this.props.reset}
         />
     
-
       </main>
     );
   }

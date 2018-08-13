@@ -1,5 +1,4 @@
 import React from 'react';
-import flamingo from '../images/flamingocardsok.jpg';
 
 class Card extends React.Component {
   render() {
@@ -16,7 +15,7 @@ class Card extends React.Component {
             <h5 className="visor__view-profession" id="job">{this.props.form.job}</h5>
           </div>
           <div className="visor__image">
-            <img className="visor__image-foto" src={flamingo} alt="target" />
+            <img className="visor__image-foto" src={this.props.form.photo} alt="target" />
           </div>
           <div className="list">
             <div className="visor__view-a">

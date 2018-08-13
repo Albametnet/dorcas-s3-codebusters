@@ -3,8 +3,9 @@ import './stylesheets/App.css';
 import CardPage from './components/CardPage';
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
+import flamingo from './images/flamingocardsok.jpg';
 
-
+const fr = new FileReader();
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,15 +20,19 @@ class App extends Component {
         email: "mariagar@example.com",
         linkedin: "mariagar",
         github: "mariagar",
-        photo: "data:image/png;base64,2342ba...",
+        photo: flamingo,
         skills: ["HTML", "Sass", "JavaScript"]
       },
+      imageUrl: "",
       urlCard: ""
     };
     this.shareTitle = { comparte: 'comparte', rellena: 'rellena', diseña: 'diseña' }
     this.titleDesign = { colors: "colores", fonts: "fuentes" };
     this.icono = { movil: 'rrss fas fa-mobile-alt', email: 'rrss far fa-envelope', linkedin: 'rrss fab fa-linkedin-in', github: 'rrss fab fa-github-alt' }
     this.changeForm = this.changeForm.bind(this);
+
+    this.writeImages = this.writeImages.bind(this);
+    this.handleImage = this.handleImage.bind(this);
     this.changeSkills = this.changeSkills.bind(this);  
     this.addNewSelectedSkill = this.addNewSelectedSkill.bind(this);
     this.removeSelectedSkill = this.removeSelectedSkill.bind(this);
@@ -50,6 +55,7 @@ class App extends Component {
         skills: skills
       })
     }
+
   }
   getskills() {
     fetch(
@@ -110,7 +116,7 @@ class App extends Component {
         )
       })
     }
-    else if (guilty.getAttribute('type') === 'email'){
+    else if (guilty.getAttribute('type') === 'email') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -119,10 +125,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'tel'){
+    else if (guilty.getAttribute('type') === 'tel') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -131,10 +137,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'linkedin'){
+    else if (guilty.getAttribute('type') === 'linkedin') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -143,10 +149,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'github'){
+    else if (guilty.getAttribute('type') === 'github') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -155,6 +161,7 @@ class App extends Component {
         return (
           { json: j }
         )
+
       })
     }
     this.saveStorage();
@@ -210,6 +217,25 @@ class App extends Component {
       });
     }
   }
+  handleImage(event) {
+    const newImage = event.target.files[0];
+    fr.addEventListener('load', this.writeImages);
+    fr.readAsDataURL(newImage);
+  }
+
+  writeImages() {
+
+    this.setState((state) => {
+      const j = {
+        ...this.state.json,
+        photo: fr.result
+      }
+      return (
+        { json: j, imageUrl: `url("${fr.result}")` }
+      )
+
+    })
+  }
 
   reset(){
     const empty = 
@@ -224,7 +250,7 @@ class App extends Component {
       email: "mariagar@example.com",
       linkedin: "mariagar",
       github: "mariagar",
-      photo: "data:image/png;base64,2342ba...",
+      photo: flamingo,
       skills: ["HTML", "Sass", "JavaScript"]
     }
   }
@@ -235,6 +261,7 @@ class App extends Component {
     json: empty.json
   })
   localStorage.clear();
+
   }
 
   render() {
@@ -257,6 +284,9 @@ class App extends Component {
               reset={this.reset} 
               request={this.sendRequest} 
               urlCard={this.state.urlCard}
+              handleImage={this.handleImage} 
+              writeImages={this.writeImages} 
+              imageUrl={this.state.imageUrl}
             />}
           />
 

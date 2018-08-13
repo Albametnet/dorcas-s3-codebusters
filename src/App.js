@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
     this.state = {
       skills: [],
-      selectedSkills: ["HTML"],
       json: {
         palette: 1,
         typography: 2,
@@ -167,29 +166,47 @@ class App extends Component {
   changeSkills(e) {
     const newSkill = e.currentTarget.value;
     const position = e.currentTarget.getAttribute('data-position');
-    const newArray = this.state.selectedSkills;
+    const newArray = this.state.json.skills;
     newArray[position] = newSkill;
+
+    const newDataJson = {
+      ...this.state.json,
+      skills: newArray
+    };
+
     this.setState({
-      selectedSkills: newArray
-    })
+      json: newDataJson
+    });
   }
 
   addNewSelectedSkill() {
-    const newSkills = this.state.selectedSkills;
+    const newSkills = this.state.json.skills;
     if (newSkills.length < 3) {
       newSkills.push("HTML");
+
+      const newDataJson = {
+        ...this.state.json,
+        skills: newSkills
+      };
+
       this.setState({
-        selectedSkills: newSkills
+        json: newDataJson
       });
     } 
   }
 
   removeSelectedSkill() {
-    const removeSkill = this.state.selectedSkills;
+    const removeSkill = this.state.json.skills;
     if (removeSkill.length > 1) {
       removeSkill.splice(-1,1);
+
+      const newDataJson = {
+        ...this.state.json,
+        skills: removeSkill
+      };
+
       this.setState({
-        selectedSkills: removeSkill
+        json: newDataJson
       });
     }
   }
@@ -225,7 +242,6 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home} />
-
           <Route path='/CardPage' render={() => 
             <CardPage 
               footerText={this.state.copyRight} 
@@ -235,14 +251,13 @@ class App extends Component {
               skills={this.state.skills} 
               form={this.state.json} 
               changeForm={this.changeForm} 
-              selectedSkills={this.state.selectedSkills} 
               changeSkills={this.changeSkills}
               addNewSelectedSkill={this.addNewSelectedSkill}
               removeSelectedSkill={this.removeSelectedSkill}
               reset={this.reset} 
               request={this.sendRequest} 
               urlCard={this.state.urlCard}
-            />} 
+            />}
           />
 
         </Switch>

@@ -57,7 +57,7 @@ class Fill extends React.Component {
           <fieldset>
             <div className="form__rellena--skills ">
               <label htmlFor="skills ">Habilidades (máximo 3)</label>
-                {this.props.selectedSkills.map((selectedSkill, index) => {
+                {this.props.form.skills.map((selectedSkill, index) => {
                   return (
                     <React.Fragment>
                       <select data-position={index} id="skills" onChange={this.props.changeSkills}>

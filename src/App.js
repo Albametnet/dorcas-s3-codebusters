@@ -3,7 +3,7 @@ import './stylesheets/App.css';
 import CardPage from './components/CardPage';
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
-
+import flamingo from './images/flamingocardsok.jpg';
 
 const fr = new FileReader();
 class App extends Component {
@@ -20,9 +20,10 @@ class App extends Component {
         email: "mariagar@example.com",
         linkedin: "mariagar",
         github: "mariagar",
-        photo: "data:image/png;base64,2342ba...",
+        photo: flamingo,
         skills: ["HTML", "Sass", "JavaScript"]
-      }
+      },
+      imageUrl: ""
     };
     this.getskills();
     this.shareTitle = { comparte: 'comparte', rellena: 'rellena', diseña: 'diseña' }
@@ -71,7 +72,7 @@ class App extends Component {
         )
       })
     }
-    else if (guilty.getAttribute('type') === 'email'){
+    else if (guilty.getAttribute('type') === 'email') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -80,10 +81,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'tel'){
+    else if (guilty.getAttribute('type') === 'tel') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -92,10 +93,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'linkedin'){
+    else if (guilty.getAttribute('type') === 'linkedin') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -104,10 +105,10 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
-    else if (guilty.getAttribute('type') === 'github'){
+    else if (guilty.getAttribute('type') === 'github') {
       this.setState((state) => {
         const j = {
           ...this.state.json,
@@ -116,21 +117,29 @@ class App extends Component {
         return (
           { json: j }
         )
-        
+
       })
     }
   }
   handleImage(event) {
-    const newImage = this.fileInput.current.files[0];
+    const newImage = event.target.files[0];
     fr.addEventListener('load', this.writeImages);
     fr.readAsDataURL(newImage);
   }
 
-  writeImages(){
-    this.setState({
-      imageUrl: `url("${fr.result}")`,
-      image: fr.result
-    });
+  writeImages() {
+
+    this.setState((state) => {
+      const j = {
+        ...this.state.json,
+        photo: fr.result
+      }
+      return (
+        { json: j, imageUrl: `url("${fr.result}")` }
+      )
+
+    })
+
   }
 
   render() {
@@ -138,7 +147,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} handleImage={this.handleImage} writeImages={this.writeImages}/>} />
+          <Route path='/CardPage' render={() => <CardPage footerText={this.state.copyRight} shareTitle2={this.shareTitle} titleDesign={this.titleDesign} iconApp={this.icono} skills={this.state.skills} form={this.state.json} changeForm={this.changeForm} handleImage={this.handleImage} writeImages={this.writeImages} imageUrl={this.state.imageUrl} />} />
         </Switch>
       </div>
     );

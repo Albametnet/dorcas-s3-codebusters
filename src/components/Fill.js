@@ -23,12 +23,12 @@ constructor(props){
             <div className="form__rellena--step">
               <label for="name">Nombre completo</label>
               <input placeholder="Ej: Sally Hill" className="input__name" type="text" id="name" data-donde="userName" data-property="name"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm} value={this.props.form.name} required />
             </div>
             <div className="form__rellena--step">
               <label for="position">Puesto</label>
               <input placeholder="Front end Unicorn" className="input__job" type="text" id="position" data-donde="job" data-property="job"
-                onChange={this.props.changeForm} required />
+                onChange={this.props.changeForm} value={this.props.form.job} required />
             </div>
             <div className="form__rellena--file">
               <label for="imagen">Imagen de Perfil</label>
@@ -64,13 +64,23 @@ constructor(props){
           <fieldset>
             <div className="form__rellena--skills ">
               <label htmlFor="skills ">Habilidades (máximo 3)</label>
-              <select id="skills">
-                {this.props.skills.map(function (item) {
+                {this.props.form.skills.map((selectedSkill, index) => {
                   return (
-                    <option value={item}>{item}</option>
+                    <React.Fragment>
+                      <select data-position={index} id="skills" onChange={this.props.changeSkills}>
+                        {this.props.skills.map((skill) => {
+                          let isSelected = false;
+                          if (selectedSkill === skill) {
+                            isSelected = true;
+                          }
+                          return <option selected={isSelected} value={skill}>{skill}</option>
+                        })}
+                      </select>
+                      <div onClick={this.props.addNewSelectedSkill}>Más</div>
+                    </React.Fragment>
                   )
                 })}
-              </select>
+                <div onClick={this.props.removeSelectedSkill}>Menos</div>
             </div>
           </fieldset>
         </div>

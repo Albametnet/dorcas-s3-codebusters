@@ -4,7 +4,7 @@ class Card extends React.Component {
   render() {
     return (
       <div className="visor__container1">
-        <button type="button" className="visor__button-reset" name="button-reset">
+        <button type="button" className="visor__button-reset" name="button-reset" onClick={this.props.reset}>
           <span>
             <i className="far fa-trash-alt"></i> reset</span>
         </button>
@@ -45,15 +45,12 @@ class Card extends React.Component {
           </div>
           <div className="visor__view-list-txt">
             <ul className="visor__skills">
-              <li className="visor__list-text-icon">
-                <span className="skill" id="selectedskills0"></span>
-              </li>
-              <li className="visor__list-text-icon">
-                <span className="skill" id="selectedskills1"></span>
-              </li>
-              <li className="visor__list-text-icon">
-                <span className="skill" id="selectedskills2"></span>
-              </li>
+              {this.props.form.skills.map((item) => {
+                return (
+                  <li className="visor__list-text-icon">
+                    <span className="skill" id="selectedskills0">{item}</span>
+                  </li> )
+              })}
             </ul>
           </div>
         </div>
